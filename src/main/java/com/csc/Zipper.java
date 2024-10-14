@@ -5,9 +5,15 @@ import java.util.ArrayList;
 public class Zipper <T> {
     private ArrayList<T> list;
 
+    public Zipper() {
+        list = new ArrayList<>(); // Initializing list
+    }
+
     public void zip(ArrayList<T> listOne,  ArrayList<T> listTwo) {
         ArrayList<T> largerList = (listOne.size() > listTwo.size()) ? listOne : listTwo;
         ArrayList<T> smallerList = (listOne.size() > listTwo.size()) ? listTwo : listOne;
+
+        list.clear();
 
         for(int i = 0; i < largerList.size(); i++) {
             if(i < smallerList.size()) {
