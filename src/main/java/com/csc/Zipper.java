@@ -1,6 +1,7 @@
 package com.csc;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Zipper <T> {
     private ArrayList<T> list;
@@ -35,4 +36,26 @@ public class Zipper <T> {
     public ArrayList<T> getList() {
         return list;
     }
+
+    /** Resources
+     * Java HashMap
+     * Link: https://www.w3schools.com/java/java_hashmap.asp 
+     * Author: W3Schools
+     */
+    public static <K, V> HashMap<K, V> hashmapify(ArrayList<K> keys, ArrayList<V> values) {
+        HashMap<K, V> map = new HashMap<>(); // Create a new HashMap
+    
+        // Check if both lists are the same size
+        if (keys.size() == values.size()) {
+            for (int i = 0; i < keys.size(); i++) {
+                map.put(keys.get(i), values.get(i)); // Bind keys and values together
+            }
+        } else {
+            System.out.println("Error - lists not the same size!"); 
+        }
+    
+        return map;
+    }
+    
+    
 }
